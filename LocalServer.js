@@ -5,7 +5,7 @@ var mime = require("mime");
 //var async = require('async');
 
 // Port to be listened by the server
-var port_number = server.listen(process.env.PORT || 3000);
+var port_number = process.env.PORT || 3000;
 
 var txts = ['send1.txt', 'send2.txt', 'send3.txt']
 
