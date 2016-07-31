@@ -24,7 +24,7 @@ var server = http.createServer(function(request, response) {
   //   fs.readFile(txts[i], createReady(i))
   // }
 
-  response.end("Hello World!");
+  response.end("MEU PRIMEIRO SITE, AEEEEEEEW!");
 
   // createReady(arg) calls this method, but NOT ready. createReady(arg)() calls both!!!!!!!!!!!! ogm, right?
   function createReady(index){
