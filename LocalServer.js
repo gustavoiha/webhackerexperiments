@@ -9,7 +9,7 @@ var port_number = process.env.PORT || 3000;
 
 var server = http.createServer(function(request, response) {
 
-  filePath = "./public" + request.url//.substring(1);
+  filePath = "/app" + request.url//.substring(1);
 
   console.log(filePath);
 
