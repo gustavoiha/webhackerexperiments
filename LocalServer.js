@@ -18,11 +18,13 @@ var server = http.createServer(function(request, response) {
 
   var count = 0
 
-  console.log(request.url);
+  // console.log(request.url);
+  //
+  // for (var i in txts){
+  //   fs.readFile(txts[i], createReady(i))
+  // }
 
-  for (var i in txts){
-    fs.readFile(txts[i], createReady(i))
-  }
+  response.end("Hello World!");
 
   // createReady(arg) calls this method, but NOT ready. createReady(arg)() calls both!!!!!!!!!!!! ogm, right?
   function createReady(index){
