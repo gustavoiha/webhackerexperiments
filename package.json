@@ -1,0 +1,22 @@
+{
+  "name": "webhackerexperiments",
+  "version": "1.0.0",
+  "description": "Random tests by Iha and Bitencs",
+  "main": "LocalServer.js",
+  "scripts": {
+    "start": "node LocalServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavoiha/webhackerexperiments.git"
+  },
+  "engine": {
+    "node": "6.3.1"
+  },
+  "author": "Gustavo Iha and Gabriel Bitencourt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavoiha/webhackerexperiments/issues"
+  },
+  "homepage": "https://github.com/gustavoiha/webhackerexperiments#readme"
+}

@@ -32,7 +32,7 @@ var server = http.createServer(function(request, response) {
 
      reads[index] = (texto.toString())
      count++
-     
+
      if (count >= txts.length)
       response.end(reads.join('\n'))
 
