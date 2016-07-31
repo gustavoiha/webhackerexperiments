@@ -11,7 +11,8 @@
     "url": "git+https://github.com/gustavoiha/webhackerexperiments.git"
   },
   "engine": {
-    "node": "6.3.1"
+    "node": "6.3.1",
+    "npm": "3.10.3"
   },
   "author": "Gustavo Iha and Gabriel Bitencourt",
   "license": "ISC",
