@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/gustavoiha/webhackerexperiments/issues"
   },
-  "homepage": "https://github.com/gustavoiha/webhackerexperiments#readme"
+  "homepage": "https://github.com/gustavoiha/webhackerexperiments#readme",
+  "dependencies": {
+    "fs": "0.0.2",
+    "http": "0.0.0"
+  }
 }
