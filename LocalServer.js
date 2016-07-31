@@ -7,54 +7,37 @@ var mime = require("mime");
 // Port to be listened by the server
 var port_number = process.env.PORT || 3000;
 
-var txts = ['send1.txt', 'send2.txt', 'send3.txt']
-
 var server = http.createServer(function(request, response) {
 
-  // time
-  var begin = Date.now();
+  filePath = request.url.substring(1);
 
-  var reads = [];
+  console.log(filePath);
 
-  var count = 0
-
-  // console.log(request.url);
-  //
-  // for (var i in txts){
-  //   fs.readFile(txts[i], createReady(i))
-  // }
-
-  response.end("MEU PRIMEIRO SITE, AEEEEEEEW!");
-
-  // createReady(arg) calls this method, but NOT ready. createReady(arg)() calls both!!!!!!!!!!!! ogm, right?
-  function createReady(index){
-    return function ready(error, texto){
-     // Send file content
-
-     if (error){
-       // internal server error
-       response.code = 500;
-       return response.end(error.toString())
-     }
-
-     reads[index] = (texto.toString())
-     count++
-
-     if (count >= txts.length)
-      response.end(reads.join('\n'))
-
-     var end = Date.now();
-
-     console.log(`file${index}: ${end - begin}`)
-   }
- }
+  serverWorking(response, filePath);
 
 }).listen(port_number); // Activates this server, listening on port 8080.
 
-/*
-obs:
+function serverWorking(response, filePath){
+  fs.exists(filePath, function(exists) {
+    if (exists){
 
-1. headers['user-agent'] = headers.user-agent, but with no ambiguity in the minus sign.
-2. Select text + ctrl d = select next equal
+      fs.readFile(filePath, function(error, data){
+        if (error){
+          // internal server error
+          response.code = 500;
+          return response.end(error.toString())
+        }
 
-*/
+        response.end(data.toString());
+
+      });
+
+    }
+    else{
+      response.writeHead(404, {"Content-type" : "text/plain"});
+      response.write("Error 404: resource not found");
+      return response.end();
+    }
+  })
+
+}
