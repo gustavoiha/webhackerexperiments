@@ -9,7 +9,7 @@ var port_number = process.env.PORT || 3000;
 
 var server = http.createServer(function(request, response) {
 
-  filePath = "/app" + request.url//.substring(1);
+  filePath = request.url;
 
   console.log(filePath);
 
@@ -17,7 +17,16 @@ var server = http.createServer(function(request, response) {
 
 }).listen(port_number); // Activates this server, listening on port 8080.
 
+
 function serverWorking(response, filePath){
+
+  // If there's no additional url after .com, return default page.
+  if (filePath == '/')
+    return defaultPage(response);
+
+  // Add /app to filePath so Server can find correct files.
+  filePath = "/app" + filePath;
+
   fs.exists(filePath, function(exists) {
     if (exists){
 
@@ -36,8 +45,12 @@ function serverWorking(response, filePath){
     else{
       response.writeHead(404, {"Content-type" : "text/plain"});
       response.write("Error 404: resource not found");
-      return response.end();
+      response.end();
     }
-  })
+  });
+};
 
+function defaultPage(response){
+  // Default page here
+  response.end('Briefly there\'ll be something awesome in here...');
 }
