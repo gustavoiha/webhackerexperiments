@@ -1,6 +1,11 @@
-var fs = require('fs');
-var http = require('http');
+var http = require("http");
+var fs = require("fs");
+var path = require("path");
+var mime = require("mime");
 //var async = require('async');
+
+// Port to be listened by the server
+var port_number = server.listen(process.env.PORT || 3000);
 
 var txts = ['send1.txt', 'send2.txt', 'send3.txt']
 
@@ -42,7 +47,7 @@ var server = http.createServer(function(request, response) {
    }
  }
 
-}).listen(8080); // Activates this server, listening on port 8080.
+}).listen(port_number); // Activates this server, listening on port 8080.
 
 /*
 obs:

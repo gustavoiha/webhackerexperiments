@@ -21,6 +21,8 @@
   "homepage": "https://github.com/gustavoiha/webhackerexperiments#readme",
   "dependencies": {
     "fs": "0.0.2",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "mimi": "^0.1.1",
+    "path": "^0.12.7"
   }
 }
