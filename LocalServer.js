@@ -12,13 +12,13 @@ var port_number = process.env.PORT || 3000;
 
 // Connecting to mongoDB database using mongoose
 //mongodb://webhacker:webhackerufabc@ds139675.mlab.com:39675/webhackerdb
-console.log('Trying to connect with: ' + process.env.MONGOLAB_URI);
+// console.log('Trying to connect with: ' + process.env.MONGOLAB_URI);
 mongoose.connect(process.env.MONGOLAB_URI);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('It totallly worked! Awesome!!');
+  console.log('connected succesfully to mongodb uri: ' + process.env.MONGOLAB_URI);
 });
 
 var server = http.createServer(function(request, response) {
