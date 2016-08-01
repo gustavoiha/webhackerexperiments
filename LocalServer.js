@@ -11,6 +11,8 @@ var port_number = process.env.PORT || 3000;
 // Let's code
 
 // Connecting to mongoDB database using mongoose
+//mongodb://webhacker:webhackerufabc@ds139675.mlab.com:39675/webhackerdb
+console.log('Trying to connect with: ' + process.env.MONGOLAB_URI);
 mongoose.connect(process.env.MONGOLAB_URI);
 
 var db = mongoose.connection;
