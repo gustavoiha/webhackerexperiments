@@ -2,10 +2,22 @@ var http = require("http");
 var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
+var mongoose = require('mongoose');
 //var async = require('async');
 
 // Port to be listened by the server
 var port_number = process.env.PORT || 3000;
+
+// Let's code
+
+// Connecting to mongoDB database using mongoose
+mongoose.connect('mongodb://gustavoiha:n112365365321@ds139675.mlab.com:39675/webhackerdb');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('It totallly worked! Awesome!!');
+});
 
 var server = http.createServer(function(request, response) {
 
