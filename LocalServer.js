@@ -25,12 +25,12 @@ db.once('open', function() {
 var Schema = mongoose.Schema;
 
 var personSchema = new Schema({
-  name: string,
-  nickname: string,
-  age: int,
-  birthPlace: string,
-  height: float,
-  weight: float
+  name: String,
+  nickname: String,
+  age: Number,
+  birthPlace: String,
+  height: Number,
+  weight: Number
 });
 
 var Person = new mongoose.model("Person", personSchema);
