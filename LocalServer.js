@@ -33,7 +33,7 @@ var personSchema = new Schema({
   weight: Number
 });
 
-var Person = new mongoose.model("Person", personSchema);
+var Person = mongoose.model("Person", personSchema);
 
 var Iha = new Person({
   name: 'Gustavo Iha',
