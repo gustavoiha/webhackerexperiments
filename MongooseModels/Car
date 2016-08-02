@@ -1,0 +1,17 @@
+var mongoose = require('mongoose');
+
+// Creating a new Mongoose Schema
+var Schema = mongoose.Schema;
+
+// Specifying what's going to be in each Car
+var carSchema = new Schema({
+  plateNumber: String,
+  model: String,
+  color: String
+});
+
+// Creating a Car model
+var Car = mongoose.model("Car", carSchema);
+
+// Exporting Person to our Node.js apps
+module.exports = Car;
