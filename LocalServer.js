@@ -21,19 +21,8 @@ db.once('open', function() {
   console.log('connected succesfully to mongodb uri: ' + process.env.MONGOLAB_URI);
 });
 
-// Let's try saving something to the database
-var Schema = mongoose.Schema;
-
-var personSchema = new Schema({
-  name: String,
-  nickname: String,
-  age: Number,
-  birthPlace: String,
-  height: Number,
-  weight: Number
-});
-
-var Person = mongoose.model("Person", personSchema);
+// Acessing Person from model file
+var Person = require('/app/MongooseModels/Person');
 
 var Iha = new Person({
   name: 'Gustavo Iha',
