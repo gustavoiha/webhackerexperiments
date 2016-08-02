@@ -21,6 +21,33 @@ db.once('open', function() {
   console.log('connected succesfully to mongodb uri: ' + process.env.MONGOLAB_URI);
 });
 
+// Let's try saving something to the database
+var Schema = mongoose.Schema;
+
+var personSchema = new Schema({
+  name: string,
+  nickname: string,
+  age: int,
+  birthPlace: string,
+  height: float,
+  weight: float
+});
+
+var Person = new mongoose.model("Person", personSchema);
+
+var Iha = new Person({
+  name: 'Gustavo Iha',
+  nickname: 'Iha',
+  age: 20,
+  birthPlace: 'São Paulo',
+  height: 1.80,
+  weight: 60.0
+});
+
+Iha.save(function(error){
+  console.log((!error) ? 'Person has been saved!' : error.toString());
+});
+
 var server = http.createServer(function(request, response) {
 
   filePath = request.url;
