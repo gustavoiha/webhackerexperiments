@@ -24,6 +24,9 @@ db.once('open', function() {
 // Acessing Person from model file
 var Person = require('/app/MongooseModels/Person');
 
+// Acessing Car from model file
+var Car = require('/app/MongooseModels/Car');
+
 var Iha = new Person({
   name: 'Gustavo Iha',
   nickname: 'Iha',
@@ -34,6 +37,15 @@ var Iha = new Person({
 });
 
 Iha.save(function(error){
+  console.log((!error) ? 'Person has been saved!' : error.toString());
+});
+
+var Celta = new Car({
+  plateNumber: 'EGG-3235',
+  model: 'celta'
+});
+
+Celta.save(function(error){
   console.log((!error) ? 'Person has been saved!' : error.toString());
 });
 
