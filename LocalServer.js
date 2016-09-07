@@ -21,6 +21,34 @@ db.once('open', function() {
   console.log('connected succesfully to mongodb uri: ' + process.env.MONGOLAB_URI);
 });
 
+// Acessing Person from model file
+var Person = require('/app/MongooseModels/Person');
+
+// Acessing Car from model file
+var Car = require('/app/MongooseModels/Car');
+
+var Iha = new Person({
+  name: 'Gustavo Iha',
+  nickname: 'Iha',
+  age: 20,
+  birthPlace: 'São Paulo',
+  height: 1.80,
+  weight: 60.0
+});
+
+Iha.save(function(error){
+  console.log((!error) ? 'Person has been saved!' : error.toString());
+});
+
+var Celta = new Car({
+  plateNumber: 'EGG-3235',
+  model: 'celta'
+});
+
+Celta.save(function(error){
+  console.log((!error) ? 'Person has been saved!' : error.toString());
+});
+
 var server = http.createServer(function(request, response) {
 
   filePath = request.url;
