@@ -66,5 +66,5 @@ function serverWorking(response, filePath){
 
 function defaultPage(response){
   // Default page here
-  response.end('Briefly there\'ll be something awesome in here...');
+  response.end('outlook table to excel: http://www.mrexcel.com/forum/excel-questions/782816-extract-table-outlook-message-excel-using-visual-basic-applications.html');
 }
